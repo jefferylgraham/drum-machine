@@ -13,14 +13,14 @@ class Display extends React.Component {
 class DrumPad extends React.Component {
   render() {
     return (
-      <div
+      <button
         id={this.props.soundID}
         onClick={this.props.onClick}
         className="drum-pad"
       >
         <audio id={this.props.id} className="clip" src={this.props.soundSrc} />
         {this.props.id}
-      </div>
+      </button>
     );
   }
 }
@@ -29,7 +29,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      display: "Display",
+      display: "Let's Rock!",
       //array of objects tying keyboard keys to sounds
       sounds: [
         { Q: "boom" },
@@ -93,9 +93,8 @@ class App extends React.Component {
       <div
         // tabIndex="0"
         onKeyPress={this.pressSound}
-        className="container-fluid"
       >
-        <div className="row justify-content-center">
+        <div>
           <div id="drum-machine">
             <Display display={this.state.display} />
             <div id="pads">

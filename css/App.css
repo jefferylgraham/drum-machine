@@ -1,20 +1,41 @@
+@font-face {
+    font-family: digital;
+    src: url(../fonts/digital-7.ttf)
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    align-items: center;
+    background-image: url(../images/drum-set-background_1920.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 p {
 	color: white;
 	background-color: black;
 	padding: 25px;
     margin: 10px;
-    font-family: 'Orbitron', sans-serif;
+    font-family: digital;
 }
 
 #display {
-	text-align: center;
+    text-align: center;
+    border-radius: 11px;
+    font-size:40px;
 }
 
 #drum-machine {
     border: 1px solid gray;
-    border-radius: 0 0 25px 25px;
-    font-size: 30px;
+    border-radius: 18px;
     background-color: gray;
+    width: 30vw;
+    box-shadow: black 3px 3px 5px;
 }
 
 #pads {
@@ -25,20 +46,54 @@ p {
     grid-gap: 15px;
     justify-items: center;
     background-color: silver;
-    border-radius: 0 0 25px 25px;
+    border-radius: 0 0 18px 18px;
 }
 
 .drum-pad {
-    height: 125px;
-    width: 125px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3em;
+	height: 100px;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 3em;
     cursor: pointer;
-    background-color: gray;
-   box-shadow: black 3px 3px 5px;
-    
+    outline: none;
+    border: none;
+	background-color: gray;
+	box-shadow: black 3px 3px 5px;
+	border-radius: 2px;
+}
+
+.drum-pad:hover {
+    background-color: silver;
+}
+
+.drum-pad:active {
+    background-color: silver;
+    color: white
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+@media screen and (max-width: 769px) {
+    #drum-machine {
+        width: 90vw;
+    }
+
+    #display {
+        font-size: 40px;
+    }
+
+    .drum-pad {
+        height: 75px;
+        width: 75px;
+    }
+
+    .drum-pad:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+
 }
 
