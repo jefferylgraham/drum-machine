@@ -84,6 +84,10 @@ p {
         height: 75px;
         width: 75px;
     }
+
+    .drum-pad:hover {
+        background-color: gray;
+    }
 }
 
 @media screen and (max-width: 769px) {
